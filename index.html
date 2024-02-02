@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 30px;
+      overflow-x: hidden;
+      display: flex;
+    
+    }
+    #name{
+      font-weight: 600;
+      font-size: 20px;
+    }
+    #circle{
+      width:150px;
+      height:150px;
+      margin:auto;
+      border-radius:50%;
+      border-style:solid;
+      border-color:black;
+      background-color:aqua;
+    }
+    .left-section {
+      display:flex;
+      gap:10px;
+      text-align:center;
+      flex-direction: column;
+        width: 30%;
+      padding: 5px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #FFF; /* Set a background color for better visibility */
+      z-index: 1; /* Ensure the left section is above the content */
+    }
+    .skill{
+      justify-content: space-between;
+      display: flex;
+      flex-direction:row;
+      gap:8px;
+    }
+    .progress{
+      height:8px;
+      background-color:red;
+    }
+    .prog1{
+      width:70%;
+      animation:fill1 2s 1;
+    }
+    .prog2{
+      width:75%;
+      animation:fill2 2s 1;
+    }
+    .prog3{
+      width:80%;
+      animation:fill3 2s 1;
+    }
+    .prog4{
+      width:40%;
+      animation:fill4 2s 1;
+    }
+    @keyframes fill1{
+      0%{
+        width:0%;
+      }
+      100%{
+        width:70%;
+      }
+    }
+    @keyframes fill2{
+      0%{
+        width:0%;
+      }
+      100%{
+        width:75%;
+      }
+    }
+    @keyframes fill3{
+      0%{
+        width:0%;
+      }
+      100%{
+        width:80%;
+      }
+    }
+    @keyframes fill4{
+      0%{
+        width:0%;
+      }
+      100%{
+        width:40%;
+      }
+    }
+    
+    .bars{
+      position: relative;
+      align-self: center;
+      height:8px;
+      width:60%;
+      background-color: #FFC0C7;
+    }
+    .content {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 33% 33% 33%;
+      column-gap: 20px;
+      row-gap: 20px;
+    }
+
+    .right {
+      display: flex;
+      padding: 30px;
+      flex-direction: column;
+    }
+
+    .box {
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .box1 {
+      background-color: aqua;
+      width: 99%;
+      margin-bottom: 30px;
+    }
+
+    .box2 {
+      background-color: aqua;
+    }
+
+    .box3 {
+      background-color: #FFF4A3;
+    }
+
+    .box4 {
+      background-color: #FFC0C7;
+    }
+
+    .box5 {
+      background-color: #FFF4A3;
+    }
+
+    .box6 {
+      background-color: #FFC0C7;
+    }
+
+
+
+    /* Media query for smaller screens */
+    @media screen and (max-width: 700px) {
+      .menu-button {
+        width:fit-content;  
+        background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 8px;
+  color: rgb(0, 0, 0);
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  height: 10%;
+        
+      }
+      .menu-button:hover {
+  background-color: rgb(162, 162, 162);
+}
+      .content {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      column-gap: 20px;
+      row-gap: 20px;
+    }
+      .left-section {
+        width: 40%;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #FFF;
+      z-index: 2;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      transition: left 0.3s ease;
+      }
+    }
+    @media screen and (min-width: 700px) {
+        .menu-button {
+        display: none; /* Hide the button for wider screens */
+      }
+    }
+    @media screen and (max-width: 550px) {
+        .content {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 100%;
+      row-gap: 20px;
+        }
+        .box1 {
+      background-color: aqua;
+      width: 90%;
+      margin-bottom: 30px;
+    }
+}
+  </style>
+  <title>Grid Example</title>
+</head>
+<body>
+
+  <!-- Menu button for narrower screens -->
+  <button class="menu-button" onclick="toggleLeftSection()"><i class="fa fa-bars"></i></button>
+
+  <!-- Left Section outside the grid -->
+  <div class="left-section">
+    <button class="menu-button" onclick="toggleLeftSection()"><i class="fa fa-close"></i></button>
+    <div id="circle"></div>
+    <span id="name">Avaneesh Karthik</span>
+  </div>
+
+  <!-- First instance of London outside the grid -->
+  <div class="right">
+    <div class="box box1">
+        <h1>Welcome to my <br>Amazing Profile page</h1>
+    </div>
+
+    <div class="content">
+        <!-- Right Sections -->
+        <div class="box box2">
+        <h2>Education</h2>
+        <p>IIITA 2023-2027<br>HMRIS 2021-2023<br>SJRPS 2005-2021</p>
+        </div>
+
+        <div class="box box3">
+        <span id="skillset"><h2>Skills</h2></span>
+          <div class="skill">
+            <span>C</span>
+            <div class="bars">
+              <div class="progress prog1"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span>C++</span>
+            <div class="bars">
+              <div class="progress prog2"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span>Python</span>
+            <div class="bars">
+              <div class="progress prog3"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span>HTML</span>
+            <div class="bars">
+              <div class="progress prog4"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="box box4">
+        <h2>Strengths</h2>
+        <p>Discipline<br>Hardworking<br>Focused<br>Leadership Skills<br>Communication Skills<br></p>
+        </div>
+
+        <div class="box box5">
+        <h2>Experience</h2>
+        <p>Out of Context (UI/UX design)<br>Hackout (Web development)<br>Machine Learning Model Training (Purchasing Intention Dataset)</p>
+        </div>
+    
+        <div class="box box6">
+        <h2>Hobbies</h2>
+        <p>Reading<br>Coding<br>Chess<br>Football<br>Meditation</p>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript function to toggle the visibility of the left section
+    function toggleLeftSection() {
+      var leftSection = document.querySelector('.left-section');
+      leftSection.style.left = leftSection.style.left === '0px' ? '-100%' : '0';
+    }
+  </script>
+
+</body>
+</html>
