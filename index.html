@@ -17,21 +17,26 @@
       font-weight: 600;
       font-size: 20px;
     }
-    #circle{
-      width:150px;
-      height:150px;
-      margin:auto;
-      border-radius:50%;
-      border-style:solid;
-      border-color:black;
-      background-color:aqua;
-    }
+      #circle{
+        margin-top:50%;
+        width:150px;
+        height:150px;
+        /* margin:auto; */
+        border-radius:50%;
+        border-style:solid;
+        border-color:black;
+        
+        background-image: url("pngtree.jpg");
+        background-size: cover;
+      }
     .left-section {
       display:flex;
       gap:10px;
       text-align:center;
       flex-direction: column;
-        width: 30%;
+      align-items: center;
+      justify-items: center ;
+      width: 30%;
       padding: 5px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -219,7 +224,10 @@
   <div class="left-section">
     <button class="menu-button" onclick="toggleLeftSection()"><i class="fa fa-close"></i></button>
     <div id="circle"></div>
-    <span id="name">Avaneesh Karthik</span>
+    <div id="name">Avaneesh Karthik</div>
+    <div class="det" >Age 19</div>
+    <div class="det" >Banglore</div>
+
   </div>
 
   <!-- First instance of London outside the grid -->
